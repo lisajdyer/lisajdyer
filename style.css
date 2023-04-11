@@ -277,3 +277,10 @@ body::after {
     height: 100%;
 }
 
+.h-captcha {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+  
