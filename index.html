@@ -72,19 +72,19 @@
           </div>
     </div>
     <div id="form-container" class="contact">
-        <h2>Contact</h2>
+        <h2 class="text">Contact</h2>
         <form id="contact-form">
             <div class="fields">
                 <div class="field half">
-                    <input type="text" name="name" id="name" placeholder="Name" />
+                    <input type="text" name="name" id="name" placeholder="Name" required/>
                 </div>
                 <div class="field half">
-                    <input type="text" name="email" id="email" placeholder="Email" />
+                    <input type="email" name="email" id="email" placeholder="Email" required/>
                 </div>
                 <div class="field">
-                    <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                    <textarea name="message" id="message" rows="4" placeholder="Message" required></textarea>
                 </div>
-                <div class="h-captcha" data-sitekey="81ed1a21-e8dd-4ddd-9995-2b7e4f8b22de"></div> 
+                <div class="h-captcha" data-sitekey="81ed1a21-e8dd-4ddd-9995-2b7e4f8b22de" required></div> 
             </div>
             <ul class="actions">
                 <!-- <input type="submit" value="Send" class="primary" />
@@ -93,18 +93,18 @@
 			    <button class="col-sm-4 col-md-3 gobutton" type="submit">Submit</button>	
             </ul>
         </form>
-    </div>
 
-    <div id="loading-spinner" class="hidden">
-        <div class="center-content">
-            <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading...">
+        <div id="loading-spinner" class="hidden">
+            <div class="center-content">
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading...">
+            </div>
+        </div>
+    
+        <div id="result-message" class="hidden center-content text">
+            <h2></h2>
         </div>
     </div>
 
-    <div id="result-message" class="hidden center-content text">
-        <h2></h2>
-    </div>
-    
     <script src="https://hcaptcha.com/1/api.js" async defer></script>
     <script>
         window.addEventListener('scroll', function() {
