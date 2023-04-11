@@ -203,7 +203,8 @@ body::after {
 }
 
 .contact input,
-.contact textarea {
+.contact textarea,
+.contact button {
     width: 100%;
     box-sizing: border-box;
     padding: 0.5rem;
