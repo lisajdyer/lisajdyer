@@ -265,3 +265,14 @@ body::after {
     padding-left: 0.75rem;
 }
 
+.hidden {
+    display: none;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
