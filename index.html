@@ -71,9 +71,9 @@
             </div>
           </div>
     </div>
-    <div class="contact">
-        <h2 class="contacttext">Contact</h2>
-        <form method="post" action="#">
+    <div id="form-container" class="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
             <div class="fields">
                 <div class="field half">
                     <input type="text" name="name" id="name" placeholder="Name" />
@@ -84,36 +84,80 @@
                 <div class="field">
                     <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
                 </div>
+                <div class="h-captcha" data-sitekey="81ed1a21-e8dd-4ddd-9995-2b7e4f8b22de"></div> 
             </div>
             <ul class="actions">
-                <input type="submit" value="Send" class="primary" />
-                <input type="reset" value="Reset" />
+                <!-- <input type="submit" value="Send" class="primary" />
+                <input type="reset" value="Reset" /> -->
+                <button class="col-sm-4 col-md-3 gobutton" type="reset">Reset</button>
+			    <button class="col-sm-4 col-md-3 gobutton" type="submit">Submit</button>	
             </ul>
         </form>
     </div>
 
+    <div id="loading-spinner" class="hidden">
+        <div class="center-content">
+            <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading...">
+        </div>
+    </div>
+
+    <div id="result-message" class="hidden center-content text">
+        <h2></h2>
+    </div>
+    
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
     <script>
-window.addEventListener('scroll', function() {
-    var boxContainer = document.querySelector('.box-container');
-    var contact = document.querySelector('.contact');
-    var windowHeight = window.innerHeight;
-    var scrollY = window.scrollY;
-    
-    var scrollRatio = scrollY / windowHeight;
-    var transparency = Math.min(Math.pow(scrollRatio, 8), 1);
-    
-    boxContainer.style.backgroundImage = 'linear-gradient(to right, rgba(53, 69, 84, ' + transparency + '), rgba(48, 52, 58, ' + transparency + '))';
-    
-    var contactRect = contact.getBoundingClientRect();
-    var contactTop = contactRect.top;
-    
-    if (contactTop < windowHeight) {
-        var contactTransparency = 1 - (windowHeight - contactTop) / windowHeight * 1;
-        contact.style.backgroundColor = 'rgba(53, 69, 84, ' + contactTransparency + ')';
-    } else {
-        contact.style.backgroundColor = 'rgba(53, 69, 84, 1)';
-    }
-});
+        window.addEventListener('scroll', function() {
+            var boxContainer = document.querySelector('.box-container');
+            var contact = document.querySelector('.contact');
+            var windowHeight = window.innerHeight;
+            var scrollY = window.scrollY;
+            
+            var scrollRatio = scrollY / windowHeight;
+            var transparency = Math.min(Math.pow(scrollRatio, 8), 1);
+            
+            boxContainer.style.backgroundImage = 'linear-gradient(to right, rgba(53, 69, 84, ' + transparency + '), rgba(48, 52, 58, ' + transparency + '))';
+            
+            var contactRect = contact.getBoundingClientRect();
+            var contactTop = contactRect.top;
+            
+            if (contactTop < windowHeight) {
+                var contactTransparency = 1 - (windowHeight - contactTop) / windowHeight * 1;
+                contact.style.backgroundColor = 'rgba(53, 69, 84, ' + contactTransparency + ')';
+            } else {
+                contact.style.backgroundColor = 'rgba(53, 69, 84, 1)';
+            }
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const formContainer = document.getElementById('form-container');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const resultMessage = document.getElementById('result-message');
+
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            formContainer.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+
+            const formData = new FormData(event.target);
+            formData.append('guid', '8a2e7c69-3c3b-4de3-8ae1-12e1d531742d');
+            const response = await fetch('https://contactformemailsend.azurewebsites.net/api/SubmitContactForm?code=ycdc8-GqA-dgua4EQl7XdteNVNGbzr-ajKXj7sI0CveFAzFutK33dQ==', {
+                method: 'POST',
+                body: formData
+            });
+
+            loadingSpinner.classList.add('hidden');
+
+            resultMessage.querySelector('h2').textContent = response.ok ? 'Form submitted successfully.' : 'Error submitting form.';
+            resultMessage.classList.remove('hidden');
+            if (response.ok) {
+                contactForm.reset();
+            } else {
+                formContainer.classList.remove('hidden');
+            }
+        });
+
     </script>
 </body>
 </html>
