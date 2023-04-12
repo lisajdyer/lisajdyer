@@ -71,9 +71,12 @@
             </div>
           </div>
     </div>
+    
     <div id="form-container" class="contact">
         <h2 class="text">Contact</h2>
-        <form id="contact-form">
+        
+        <div id="form-content">
+            <form id="contact-form">
             <div class="fields">
                 <div class="field half">
                     <input type="text" name="name" id="name" placeholder="Name" required/>
@@ -93,17 +96,19 @@
 			    <button class="col-sm-4 col-md-3 gobutton" type="submit">Submit</button>	
             </ul>
         </form>
+    </div>
 
-        <div id="loading-spinner" class="hidden">
-            <div class="center-content">
-                <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading...">
-            </div>
-        </div>
-    
-        <div id="result-message" class="hidden center-content text">
-            <h2></h2>
+    <div id="loading-spinner" class="hidden">
+        <div class="center-content">
+            <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading...">
         </div>
     </div>
+
+    <div id="result-message" class="hidden center-content text">
+        <h2></h2>
+    </div>
+
+
 
     <script src="https://hcaptcha.com/1/api.js" async defer></script>
     <script>
@@ -130,14 +135,14 @@
         });
 
         const contactForm = document.getElementById('contact-form');
-        const formContainer = document.getElementById('form-container');
+        const formContent = document.getElementById('form-content'); // Changed from formContainer
         const loadingSpinner = document.getElementById('loading-spinner');
         const resultMessage = document.getElementById('result-message');
 
         contactForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            formContainer.classList.add('hidden');
+            formContent.classList.add('hidden'); // Changed from formContainer
             loadingSpinner.classList.remove('hidden');
 
             const formData = new FormData(event.target);
@@ -151,12 +156,14 @@
 
             resultMessage.querySelector('h2').textContent = response.ok ? 'Form submitted successfully.' : 'Error submitting form.';
             resultMessage.classList.remove('hidden');
+            document.getElementById('result-message').style.marginTop = '-90vh';
             if (response.ok) {
                 contactForm.reset();
             } else {
-                formContainer.classList.remove('hidden');
+                formContent.classList.remove('hidden'); // Changed from formContainer
             }
         });
+
 
     </script>
 </body>
