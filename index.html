@@ -10,13 +10,19 @@
 <body>
     <div id="overlay"></div>
     <div id="page-content">
+
+
+
         <div class="text-container">
             <h1 class="name">Lisa J Dyer</h1>
             <p class="para">Singer, song-writer & musician from Brighton, UK.<br>
                 Acoustic is my soul.</p>
         </div>
  
-
+        <!-- <div class="menu-bar">
+            <span class="close-btn" id="closeBtn">&times;</span>
+        </div>
+        <div class="black-screen"></div> -->
 
         <div class="box-container">
             <div class="box">
@@ -80,7 +86,6 @@
         
         <div id="form-container" class="contact">
             <h2 class="text">Contact</h2>
-            
             <div id="form-content">
                 <form id="contact-form">
                 <div class="fields">
@@ -114,9 +119,15 @@
             <h2></h2>
         </div>
 
-    </div>
-
-
+        <div class="footer">
+            <p>
+                &copy; <span id="current-year"></span> Designed by <a href="https://7sweb.net/" target="_blank" rel="noopener noreferrer">7sweb</a>
+            </p>
+        </div>
+        
+        <script>
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        </script>
         <script src="https://hcaptcha.com/1/api.js" async defer></script>
         <script src="script.min.js"></script>
 </body>
