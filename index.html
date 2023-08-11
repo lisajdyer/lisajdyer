@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lisa Dyer, a singer-songwriter from Brighton, UK, masterfully blends indie rock and acoustic melodies. Drawing inspiration from icons like Lana Del Rey, Birdy, Jack Savoretti, and Nirvana, Lisa captivates listeners with her soulful tunes and poetic lyrics. Explore her musical journey today.">
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet"> -->
+
     <title>Lisa Dyer</title>
     <link rel="stylesheet" href="style.min.css">
 </head>
@@ -18,90 +21,101 @@
                 Acoustic is my soul.</p>
         </div>
 
-        <!-- <div class="menu-bar">
-            <span class="close-btn" id="closeBtn">&times;</span>
+        <div class="menu-bar">
+            <div class="hamburger" id="closeBtn">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </div>
-        <div class="black-screen"></div> -->
+        <div class="black-screen">
+            <br><br>
+            <h2 class="aboutheading">About Lisa</h2>
+            <p class="about">Emerging from the vibrant music scene of Brighton, UK, I am a singer-songwriter and musician, drawing subtle influences from the indie rock genre and cultivating a distinctive flair for acoustic guitar. My creative process finds inspiration in a myriad of influential artists that range from the ethereal melodies of Lana Del Rey and Birdy, to the sultry rhythms of Vanessa Paradis. My music also resonates with the poignant lyrics and the raw authenticity of Jack Savoretti and Nirvana.</p>
+
+            <p class="about">My deep-seated love for music intertwines with an affinity for poetry, shaping a unique soundscape that echoes my soulful tunes. Every chord I strum on my guitar and every lyric I write simply represent my love for music and poetry, and keep me moving forward on my musical journey.</p>
+        </div>
+        
 
         <div class="box-container">
             <div class="box">
-                <button class="close-btn">X</button>
+                <button aria-label="Close" class="close-btn">X</button>
                 <div class="image-container">
                 <img src="images/lisa1.webp" alt="Lisa at royal pavilion" class="background-image">
                 </div>
                 <div class="iframe-container">
-                    <p>lana del rey summertime sadness cover</p> 
-                    <button class="playBtn" data-song-src="summer.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
-                    <input type="range" id="trackBar" data-song-src="summer.mp3">
+                    <p class="songname">Lana Del Rey summertime sadness cover</p> 
+                    <button aria-label="Play" class="playBtn" data-song-src="summer.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
+                    <input type="range" id="trackBar" data-song-src="summer.mp3" aria-label="Progress bar for Summer time sadness">
                 </div>
             </div>
             
             <div class="box">
-                <button class="close-btn">X</button>
+                <button aria-label="Close" class="close-btn">X</button>
                 <div class="image-container">
                     <img src="images/lisa.webp" alt="Lisa playing guitar" class="background-image">
                 </div>
                 <div class="iframe-container">
             
-                    <p>Vanessa Paradis - Joe le Taxi (Cover) by Lisa J Dyer</p> 
-                    <button class="playBtn" data-song-src="Vanessa_Paradis.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
-                    <input type="range" id="trackBar" data-song-src="Vanessa_Paradis.mp3">
+                    <p class="songname">Vanessa Paradis - Joe le Taxi (Cover) by Lisa J Dyer</p> 
+                    <button aria-label="Play" class="playBtn" data-song-src="Vanessa_Paradis.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
+                    <input type="range" id="trackBar" data-song-src="Vanessa_Paradis.mp3" aria-label="Progress bar for Vanessa_Paradis">
 
                 </div>
             </div>
             <div class="box">
-                <button class="close-btn">X</button>
+                <button aria-label="Close" class="close-btn">X</button>
                 <div class="image-container">
                     <img src="images/ldyer.webp" alt="Lisa playing guitar in colour" class="background-image">
                 </div>
                 <div class="iframe-container">
-                    <p>Lana Del Rey - Blue Jeans (Cover) by Lisa J Dyer</p> 
-                    <button class="playBtn" data-song-src="Blue Jeans.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
-                    <input type="range" id="trackBar" data-song-src="Blue Jeans.mp3">
+                    <p class="songname">Lana Del Rey - Blue Jeans (Cover) by Lisa J Dyer</p> 
+                    <button aria-label="Play" class="playBtn" data-song-src="Blue Jeans.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
+                    <input type="range" id="trackBar" data-song-src="Blue Jeans.mp3" aria-label="Progress bar for Blue Jeans">
                 </div>
             </div>
             <div class="box">
-                <button class="close-btn">X</button>
+                <button aria-label="Close" class="close-btn">X</button>
                 <div class="image-container">
                     <img src="images/ld2.webp" alt="Lisa sunset" class="background-image">
                 </div>
                 <div class="iframe-container">
-                    <p>Lana Del Rey - West Coast (Cover) by Lisa J Dyer</p> 
-                    <button class="playBtn" data-song-src="West Coast.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
-                    <input type="range" id="trackBar" data-song-src="West Coast.mp3">
+                    <p class="songname">Lana Del Rey - West Coast (Cover) by Lisa J Dyer</p> 
+                    <button aria-label="Play" class="playBtn" data-song-src="West Coast.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
+                    <input type="range" id="trackBar" data-song-src="West Coast.mp3" aria-label="Progress bar for West Coast">
                 </div>
             </div>
             <div class="box">
-                <button class="close-btn">X</button>
+                <button aria-label="Close" class="close-btn">X</button>
                 <div class="image-container">
                     <img src="images/ld3.webp" alt="Lisa standing in garden" class="background-image">
                 </div>
                 <div class="iframe-container">
-                    <p>Amy Winehouse - I'm No Good (Cover) by Lisa J Dyer</p> 
-                    <button class="playBtn" data-song-src="I'm No Good.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
-                    <input type="range" id="trackBar" data-song-src="I'm No Good.mp3">
+                    <p class="songname">Amy Winehouse - I'm No Good (Cover) by Lisa J Dyer</p> 
+                    <button aria-label="Play" class="playBtn" data-song-src="I'm No Good.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
+                    <input type="range" id="trackBar" data-song-src="I'm No Good.mp3" aria-label="Progress bar for I'm No Good">
                 </div>
             </div>
             <div class="box">
-                <button class="close-btn">X</button>
+                <button aria-label="Close" class="close-btn">X</button>
                 <div class="image-container">
                     <img src="images/ld4.webp" alt="guitar" class="background-image">
                 </div>
                 <div class="iframe-container">
-                    <p> Nirvana - Heart Shaped Box (Cover) by Lisa J Dyer</p> 
-                    <button class="playBtn" data-song-src="Heart Shaped Box.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
-                    <input type="range" id="trackBar" data-song-src="Heart Shaped Box.mp3">
+                    <p class="songname"> Nirvana - Heart Shaped Box (Cover) by Lisa J Dyer</p> 
+                    <button aria-label="Play" class="playBtn" data-song-src="Heart Shaped Box.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
+                    <input type="range" id="trackBar" data-song-src="Heart Shaped Box.mp3" aria-label="Progress bar for Heart Shaped Box">
                 </div>
             </div>
             <div class="box">
-                <button class="close-btn">X</button>
+                <button aria-label="Close" class="close-btn">X</button>
                 <div class="image-container">
                     <img src="images/ld5.webp" alt="Lisa guitar" class="background-image">
                 </div>
                 <div class="iframe-container">
-                    <p>Oasis - (It's Good) To Be Free - (Cover) by Lisa J Dyer</p> 
-                    <button class="playBtn" data-song-src="It's Good To Be Free.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
-                    <input type="range" id="trackBar" data-song-src="It's Good To Be Free.mp3">
+                    <p class="songname">Oasis - (It's Good) To Be Free - (Cover) by Lisa J Dyer</p> 
+                    <button aria-label="Play" class="playBtn" data-song-src="It's Good To Be Free.mp3"><i class="fas fa-play"></i><i class="fas fa-spinner fa-spin" style="display:none;"></i></button>
+                    <input type="range" id="trackBar" data-song-src="It's Good To Be Free.mp3" aria-label="Progress bar for It's Good To Be Free">
                 </div>
             </div>
         </div>
